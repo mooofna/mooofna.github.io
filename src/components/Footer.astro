@@ -28,6 +28,7 @@ import { builtOn, commit, shortCommit } from '../lib/build';
         Built {builtOn}
         {shortCommit && (
           <>
+            {' '}
             from{' '}
             <a class="mono" href={`${site.source}/commit/${commit}`}>
               {shortCommit}
