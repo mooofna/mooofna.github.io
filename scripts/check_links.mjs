@@ -1,11 +1,12 @@
 // Fail if a built page links to a same-site path that does not exist in dist/.
-// Paths below /singapore-urban-heat/ belong to another repository and are skipped.
+// Paths below /singapore-urban-heat/ and /mucodi-radiology/ belong to other repositories and are
+// skipped.
 // Usage: node scripts/check_links.mjs dist
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = process.argv[2] ?? 'dist';
-const external = ['/singapore-urban-heat/'];
+const external = ['/singapore-urban-heat/', '/mucodi-radiology/'];
 
 function* htmlFiles(dir) {
   for (const name of readdirSync(dir)) {
