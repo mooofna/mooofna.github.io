@@ -5,7 +5,7 @@ kind: Bachelor thesis
 context: Harvard Medical School and MGH, 2026
 summary: Six published CT foundation models benchmarked on 11 cohorts, the two strongest distilled into 14 compact 3D models. With an MLP probe, a 3M-parameter student comes within 0.2 AUROC points of its 79M-parameter teacher. A web demo runs the students on your own CPU.
 image: ../../assets/projects/radiology-thesis.png
-imageAlt: The CPU race of the MuCoDi Chest CT demo. After 15 seconds on one CPU thread the smallest student, TMIN, has encoded 36 chest CTs and T2 28, while the hatched lanes of the two teachers, projected from their measured single-core times, have not finished one.
+imageAlt: The CPU race of the MuCoDi Chest CT demo. After 15 seconds, each on one CPU thread, the smallest student, TMIN, has encoded 28 chest CTs and T2 22, while the hatched lanes of the two teachers, projected from their measured single-core times, have not finished one.
 links:
   - { label: Open the demo, href: /mucodi-radiology/ }
   - { label: Code, href: 'https://github.com/mooofna/mucodi-radiology' }
