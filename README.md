@@ -4,7 +4,7 @@ The personal homepage of Maurice Heide, live at **https://mooofna.github.io**.
 
 ![The home page](docs/home-light.png)
 
-A plain, strict layout: a 12-column grid with a label column and a content column, one grotesque typeface (Schibsted Grotesk) with IBM Plex Mono for dates and figures, hairline rules and a single signal colour. The theme follows the system setting, and a toggle in the header switches between light and dark.
+A plain, strict layout: a 12-column grid with a label column and a content column, one grotesque typeface (Schibsted Grotesk) with IBM Plex Mono for dates and figures, hairline rules and one accent colour (ETH blue). The theme follows the system setting, and a toggle in the header switches between light and dark.
 
 | Dark theme                                             | Phone                                             |
 | ------------------------------------------------------ | ------------------------------------------------- |
@@ -41,7 +41,7 @@ npm run e2e          # Playwright: every page in both themes, axe, theme toggle,
 python3 scripts/check_style.py   # house style: no em dashes, en dashes or middle dots
 ```
 
-`npm run cv` needs a TeX installation with `latexmk` and `xelatex`; the Libertine and Biolinum fonts ship with TeX Live. `node scripts/screenshots.ts demo` refreshes the Singapore card image from the live demo, and `node scripts/screenshots.ts site` renders the README screenshots and the Open Graph image from a running `npm run preview`.
+`npm run cv` needs a TeX installation with `latexmk` and `xelatex`; the Libertine and Biolinum fonts ship with TeX Live. `npm run icons` redraws the tab icon ("MH" in the site's typeface) and its PNG and ICO versions. `node scripts/screenshots.ts demo` refreshes the Singapore card image from the live demo, and `node scripts/screenshots.ts site` renders the README screenshots and the Open Graph image from a running `npm run preview`.
 
 Pushes to `main` deploy through GitHub Actions ([deploy.yml](.github/workflows/deploy.yml)). CI runs the type check, formatting, the house style check over sources and built pages, an internal link check and the Playwright suite.
 

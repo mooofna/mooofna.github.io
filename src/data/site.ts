@@ -3,7 +3,7 @@ export const site = {
   name: 'Maurice Heide',
   url: 'https://mooofna.github.io',
   description:
-    'Maurice Heide, MSc student in Data Science at ETH Zurich. Machine learning research on model distillation and distributed training. Previously Harvard Medical School and MGH.',
+    'Maurice Heide, MSc student in Data Science at ETH Zurich. Machine learning and statistics, from research to production. Previously Harvard Medical School and MGH.',
   email: 'mheide@student.ethz.ch',
   profiles: [
     { label: 'GitHub', href: 'https://github.com/mooofna' },

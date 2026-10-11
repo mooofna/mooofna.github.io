@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "e2e": "playwright test",
     "cv": "cd cv && latexmk -xelatex -interaction=nonstopmode -halt-on-error Maurice_Heide_CV.tex && cp Maurice_Heide_CV.pdf ../public/cv/Maurice_Heide_CV.pdf && latexmk -c",
-    "screenshots": "node scripts/screenshots.ts"
+    "screenshots": "node scripts/screenshots.ts",
+    "icons": "uv run --with fonttools --with brotli python scripts/make_icons.py && node scripts/render_icons.ts && uv run --with pillow python scripts/make_ico.py"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

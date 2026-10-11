@@ -80,10 +80,12 @@ if (mode === 'demo') {
   });
   await page.goto(`${site}/`);
   await page.waitForLoadState('networkidle');
-  // The intro block only: name, lede, facts and portrait.
+  // The intro block only (name, lede, facts and portrait), centred in the frame.
   await page.addStyleTag({
-    content:
-      '.site-header { display: none !important; } .intro { padding-top: 56px !important; border-bottom: 0 !important; }'
+    content: [
+      '.site-header, .site-footer, main > :not(.intro) { display: none !important; }',
+      '.intro { min-height: 630px; align-content: center; padding-block: 48px !important; border-bottom: 0 !important; }'
+    ].join(' ')
   });
   await page.waitForTimeout(800);
   await page.screenshot({ path: 'public/og.png' });
