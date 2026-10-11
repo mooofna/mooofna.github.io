@@ -1,5 +1,5 @@
 ---
-title: Radiology foundation models, small
+title: MuCoDi Chest CT
 order: 2
 kind: Bachelor thesis
 context: Harvard Medical School and MGH, 2026
