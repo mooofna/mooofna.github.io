@@ -1,0 +1,11 @@
+- id: mucodi
+  title: Multi-Teacher Contrastive Distillation for Edge-Efficient Pathology Foundation Models
+  authors: [T. Lenz, M. Heide, M. Gustav, N. G. Reitsam, J. N. Kather]
+  me: M. Heide
+  equal: [T. Lenz, M. Heide]
+  venue: MICCAI 2026 Workshop on Efficient Medical AI (EMA4MICCAI)
+  year: 2026
+  note: Best Paper Award
+  links:
+    - { label: arXiv, href: 'https://arxiv.org/abs/2607.05533' }
+    - { label: Code, href: 'https://github.com/KatherLab/MuCoDi' }

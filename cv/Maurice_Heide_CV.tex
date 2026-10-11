@@ -1,0 +1,144 @@
+% Maurice Heide, public CV for https://mooofna.github.io/cv/
+% Derived from the application CV of 09.10.2026 with the phone number and patient counts removed
+% and a link to the homepage added (it links GitHub and Google Scholar). Ranges are written with "to", not dashes.
+% Build: npm run cv (xelatex via latexmk; the Libertine and Biolinum fonts ship with TeX Live).
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,top=1.2cm,bottom=1.15cm,left=1.6cm,right=1.6cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+
+% Fonts by file name (they ship with TeX Live), so the build does not depend on installed system fonts.
+\setmainfont{LinLibertine}[Extension=.otf,UprightFont=*_R,BoldFont=*_RZ,ItalicFont=*_RI,BoldItalicFont=*_RZI,
+  Ligatures={TeX,Common},Numbers={Lining,Proportional}]
+\newfontfamily\ui{LinBiolinum}[Extension=.otf,UprightFont=*_R,BoldFont=*_RB,ItalicFont=*_RI,
+  Ligatures=TeX,Numbers=Lining]
+\definecolor{akzent}{HTML}{17365D}
+\definecolor{grau}{HTML}{4A4A4A}
+\definecolor{linie}{gray}{0.62}
+
+\hypersetup{pdftitle={Maurice Heide, CV},pdfauthor={Maurice Heide},pdfcreator={Maurice Heide},pdfproducer={}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\hyphenpenalty=10000 \exhyphenpenalty=10000 \emergencystretch=3em
+\newcommand{\grundtext}{\fontsize{10.1}{12.1}\selectfont}
+\AtBeginDocument{\grundtext}
+
+\newcommand{\trenner}{\unskip\hspace{0.7em}\textbar\hspace{0.7em}\ignorespaces}
+\newcommand{\sperr}[1]{{\addfontfeature{LetterSpace=8}#1}}
+
+% Abschnitt: Biolinum halbfett, Versalien gesperrt, Akzentfarbe, feine Linie
+\newcommand{\abschnitt}[1]{%
+  \par\vspace{5.2pt}%
+  {\ui\bfseries\fontsize{10.5}{10.5}\selectfont\color{akzent}\sperr{\MakeUppercase{#1}}}\par
+  \vspace{2.2pt}{\color{linie}\hrule height 0.4pt}\vspace{4pt}}
+
+% Eintrag: Institution fett links, Ort rechts; Rolle kursiv links, Zeitraum rechts
+\newcommand{\eintrag}[4]{%
+  \par\vspace{2.4pt}%
+  \noindent\textbf{#1}\hfill{\ui\fontsize{9.5}{12.6}\selectfont\color{grau}#2}\par
+  \noindent\textit{#3}\hfill{\ui\fontsize{9.5}{12.6}\selectfont\color{grau}#4}\par}
+
+% Stichpunkte
+\setlist[itemize]{label={\fontsize{7}{7}\selectfont\textbullet},leftmargin=1.05em,labelsep=0.45em,
+  topsep=0.8pt,itemsep=0.6pt,parsep=0pt,partopsep=0pt,before=\RaggedRight}
+
+% Zeile im Skills- und Awards-Block: Etikett fett, Text daneben
+\newcommand{\zeile}[2]{\par\noindent\hangindent=7.1em\hangafter=1
+  \makebox[7.1em][l]{\textbf{#1}}#2\par\vspace{1.2pt}}
+
+\begin{document}
+
+% ------------------------------------------------------------------ Kopf
+\begin{center}
+  {\ui\bfseries\fontsize{21}{22}\selectfont\color{akzent}\sperr{Maurice Heide}}\par
+  \vspace{4pt}
+  {\ui\fontsize{9.8}{12}\selectfont\color{grau}%
+  Zurich, Switzerland\trenner
+  \href{mailto:mheide@student.ethz.ch}{mheide@student.ethz.ch}\trenner
+  \href{https://mooofna.github.io}{mooofna.github.io}\trenner
+  \href{https://www.linkedin.com/in/maurice-heide}{linkedin.com/in/maurice-heide}}\par
+\end{center}
+\vspace{-3pt}
+
+% ------------------------------------------------------------------ Ausbildung
+\abschnitt{Education}
+
+\eintrag{ETH Zurich}{Zurich, Switzerland}{M.Sc.\ Data Science}{Sep 2026 to present}
+\begin{itemize}
+\item Coursework: Probabilistic AI, Mathematics of Data Science, Big Data, Seminar in Representation Learning
+\end{itemize}
+
+\eintrag{TU Dresden}{Dresden, Germany}{B.Sc.\ Computer Science, grade 1.0 (top grade), passed with distinction}{Oct 2022 to Aug 2026}
+\begin{itemize}
+\item Thesis (1.0) on radiology foundation models at Harvard Medical School and Massachusetts General Hospital
+\item All four mathematics exams 1.0 (30 ECTS); teaching assistant for Discrete Mathematics, best-rated group
+\end{itemize}
+
+\eintrag{Nanyang Technological University}{Singapore}{Exchange semester, GPA 4.83/5.00; the only exchange student of the relaunched partnership}{Jan 2025 to May 2025}
+
+\eintrag{Seoul National University}{Seoul, South Korea}{Exchange semester, GPA 4.2/4.3}{Sep 2024 to Dec 2024}
+\begin{itemize}
+\item One of two exchange places; A+ in Deep Learning (graduate level) and Statistics
+\end{itemize}
+
+% ------------------------------------------------------------------ Erfahrung
+\abschnitt{Experience}
+
+\eintrag{Harvard Medical School \& Massachusetts General Hospital}{Boston, USA}{Visiting Undergraduate Researcher, Harvard University; Fintelmann Lab, Radiology}{May 2026 to Sep 2026}
+\begin{itemize}
+\item Bachelor thesis: benchmarked six published CT foundation models on 11 cohorts (20,862 scans) and distilled the two strongest into 14 compact 3D models (0.04M to 44M parameters)
+\item Built the training and evaluation stack: PyTorch DDP on up to 8 A100s with Slurm auto-resume (2,260 GPU-hours) and a tested evaluation package whose outputs match the original models byte for byte
+\item A 3M student is within 0.2 AUROC points of its 79M teacher (MLP probe), and the smallest runs 82.6$\times$ faster on CPU
+\item As the lab's only engineer, scaled its CT biomarker pipeline to 3,864 scans; checked its outputs against the images, caught and removed wrong values in 1,149 scans, and set the quality-control rules
+\item Took an LLM pipeline from design to production (Qwen3-4B on vLLM); it labels lung-cancer recurrence in clinical notes, with a review GUI for the medical team
+\end{itemize}
+
+\eintrag{Else Kröner Fresenius Center for Digital Health, TU Dresden}{Dresden, Germany}{Research Assistant, Kather Lab}{Oct 2025 to Mar 2026, Nov 2023 to Jun 2024}
+\begin{itemize}
+\item Shared first author of MuCoDi: distilled three pathology foundation models of up to 1.1B parameters into edge models; a 6.4M student, 99$\times$ smaller than the best teacher, is within 0.9 AUROC points of it on external data, and sub-million students run up to 605$\times$ faster on a Raspberry Pi 5
+\item Built a WebAssembly engine that predicts biomarkers from gigapixel slides in seconds, privately in the browser
+\item 2023 to 2024: turned 16\,TB of whole-slide images into 23\,MB of embeddings with a self-supervised pipeline
+\end{itemize}
+
+\eintrag{EY \& Associés, Forensic \& Integrity Services}{Paris, France}{Data Science Intern}{Jul 2025 to Sep 2025}
+\begin{itemize}
+\item Built a detector for AI-generated forgeries in EY's document-analysis platform (500+ clients, 25+ countries): compared 20 pretrained models, then fine-tuned DINOv3, using SVD to separate image content from forgery traces
+\item Curated a balanced training set of 250k real and 250k synthetic images from 6M, controlling for the JPEG and image-size biases that weaken detectors on unseen generators
+\item 99.8\% accuracy on a public benchmark of 25 generators, 97 to 100\% on passports and receipts forged by Nano Banana
+\end{itemize}
+
+\eintrag{Fraunhofer IVI}{Dresden, Germany}{Research Assistant, Applied Machine Learning}{Mar 2023 to Sep 2023}
+\begin{itemize}
+\item Built an automated calibration framework for the 29 near-infrared classifiers of a waste-sorting plant; XGBoost on 58 spectral parameters raised sorting accuracy by 22\% for Germany's leading waste-management company
+\item Wrote an ETL pipeline whose statistical thresholds flag sensor drift and calibration errors, reducing plant downtime
+\end{itemize}
+
+% ------------------------------------------------------------------ Publikation
+\abschnitt{Publication}
+
+\noindent T.~Lenz\textsuperscript{\textdagger}, \textbf{M.~Heide}\textsuperscript{\textdagger}, M.~Gustav, N.~G.~Reitsam, J.~N.~Kather. \textit{Multi-Teacher Contrastive Distillation for Edge-Efficient Pathology Foundation Models.} MICCAI 2026 Workshop on Efficient Medical AI. \href{https://arxiv.org/abs/2607.05533}{arXiv:2607.05533}. \textsuperscript{\textdagger}Equal contribution.\par
+
+% ------------------------------------------------------------------ Auszeichnungen
+\abschnitt{Honors}
+
+\begin{itemize}
+\item Best Paper Award, MICCAI 2026 Workshop on Efficient Medical Artificial Intelligence (EMA4MICCAI), Strasbourg
+\item Scholar of the German Academic Scholarship Foundation (Studienstiftung des deutschen Volkes) since 2022
+\item Hermann Medal for the best Abitur of the year (1.0); two prizes of the German Physical Society
+\end{itemize}
+
+% ------------------------------------------------------------------ Kenntnisse
+\abschnitt{Skills}
+
+\zeile{Programming}{Python (PyTorch, JAX, scikit-learn, XGBoost, pandas, Hugging Face, ONNX), SQL, Rust, C++, Java}
+\zeile{Infrastructure}{Slurm and Apptainer on GPU clusters, Docker, Kubernetes, GitHub Actions, pytest, mypy, W\&B}
+\zeile{Languages}{German (native), English (C2, IELTS 8.5), French (A1)}
+
+\end{document}

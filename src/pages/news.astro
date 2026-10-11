@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import NewsList from '../components/NewsList.astro';
+
+const news = (await getCollection('news')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Base title="News" description="News from Maurice Heide.">
+  <header class="page row head">
+    <h1 class="content">News</h1>
+  </header>
+  <section class="page row section" aria-label="All news">
+    <div class="content">
+      <NewsList items={news} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: var(--space-5) var(--space-4);
+  }
+
+  h1 {
+    font-size: var(--text-xl);
+  }
+</style>

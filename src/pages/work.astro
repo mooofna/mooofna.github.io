@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectRow from '../components/ProjectRow.astro';
+import Publications from '../components/Publications.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  title="Work"
+  description="Research and open-source work by Maurice Heide: model distillation for pathology and radiology foundation models, a self-updating study of urban heat in Singapore, and tools."
+>
+  <header class="page row head">
+    <h1 class="content">Work</h1>
+    <p class="content lede">
+      Most of my work compresses large models into small and fast ones and measures what is lost.
+      The rest are projects I built and maintain in the open.
+    </p>
+  </header>
+
+  <section class="page section" aria-label="Projects">
+    <ol class="work">
+      {projects.map((p, i) => (
+        <ProjectRow project={p} index={i + 1} full headingLevel="h2" />
+      ))}
+    </ol>
+  </section>
+
+  <section class="page row section" aria-labelledby="pubs-title">
+    <h2 id="pubs-title" class="label section-name">
+      Publications
+    </h2>
+    <div class="content">
+      <Publications />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .head {
+    padding-block: var(--space-5) var(--space-4);
+    row-gap: var(--space-2);
+  }
+
+  h1 {
+    font-size: var(--text-xl);
+  }
+
+  .lede {
+    max-width: var(--measure);
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .work {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .work :global(.item:first-child) {
+    border-top: 0;
+    padding-top: 0;
+  }
+</style>

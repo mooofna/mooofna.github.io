@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content';
+
+const pubs = (await getCollection('publications')).sort((a, b) => b.data.year - a.data.year);
+---
+
+<ol class="pubs">
+  {pubs.map(({ data }) => (
+    <li>
+      <p class="title">{data.title}</p>
+      <p class="authors">
+        {data.authors.map((a, i) => (
+          <>
+            {i > 0 && ', '}
+            {a === data.me ? <strong>{a}</strong> : a}
+            {data.equal.includes(a) && <sup>&dagger;</sup>}
+          </>
+        ))}
+      </p>
+      <p class="venue muted">
+        {data.venue}, {data.year}
+        {data.note && <span class="note">{data.note}</span>}
+      </p>
+      <ul class="links">
+        {data.links.map((l) => (
+          <li>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))}
+      </ul>
+      {data.equal.length > 0 && <p class="small muted">&dagger; Equal contribution.</p>}
+    </li>
+  ))}
+</ol>
+
+<style>
+  .pubs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 44rem;
+  }
+
+  .pubs > li + li {
+    margin-top: var(--space-3);
+  }
+
+  p {
+    margin: 0 0 0.2rem;
+  }
+
+  .title {
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  strong {
+    font-weight: 650;
+  }
+
+  .note {
+    margin-left: 0.6rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .links {
+    margin-block: 0.5rem;
+  }
+
+  .small {
+    font-size: var(--text-sm);
+  }
+</style>

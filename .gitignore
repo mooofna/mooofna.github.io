@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+test-results/
+playwright-report/
+.DS_Store
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*.xdv
+cv/*.synctex.gz
+cv/Maurice_Heide_CV.pdf

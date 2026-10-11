@@ -1,0 +1,51 @@
+/*
+ * Design tokens. Change the look of the whole site here.
+ *
+ * Every colour is written as light-dark(light, dark). The visitor's system setting
+ * picks the theme; the toggle in the header overrides it by setting data-theme on
+ * <html>. All text colours keep at least 4.5:1 contrast on the background.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* Type */
+  --font-sans:
+    'Schibsted Grotesk Variable', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
+  --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.55rem);
+  --text-xl: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+  --text-display: clamp(3.5rem, 1rem + 10.5vw, 9.5rem);
+  --leading: 1.55;
+
+  /* Grid */
+  --page: 76rem;
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+  --measure: 38rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  /* Colour */
+  --bg: light-dark(#ffffff, #0e0e0e);
+  --text: light-dark(#111111, #f1f1f1);
+  --muted: light-dark(#5f5f5f, #a0a0a0);
+  --rule-strong: light-dark(#111111, #f1f1f1);
+  --rule: light-dark(#e4e4e4, #2a2a2a);
+  --accent: light-dark(#d0021b, #ff4a4a);
+  --plate: #ffffff;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}

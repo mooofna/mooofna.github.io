@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found" description="This page does not exist.">
+  <section class="page row lost">
+    <div class="content">
+      <p class="mono muted">404</p>
+      <h1>Page not found</h1>
+      <p class="measure">
+        This page does not exist or has moved. Go to the <a href="/">home page</a>, or see the{' '}
+        <a href="/work/">work</a> and the <a href="/cv/">CV</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lost {
+    padding-block: var(--space-6);
+    min-height: 50vh;
+  }
+
+  h1 {
+    font-size: var(--text-xl);
+    margin: 0.3rem 0 var(--space-2);
+  }
+</style>

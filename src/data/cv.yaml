@@ -1,0 +1,99 @@
+# Web CV. Entries are sorted by start date within each section.
+# Sources: Profil/LinkedIn.md (section 3) and Profil/Maurice Heide - Profile and Skills.md.
+- id: eth-msc
+  section: education
+  start: 2026-09
+  end: 2028 (expected)
+  title: MSc Data Science
+  org: ETH Zurich
+  place: Zurich
+- id: tud-bsc
+  section: education
+  start: 2022-10
+  end: 2026-08
+  title: BSc Computer Science
+  org: TU Dresden
+  place: Dresden
+  note: Grade 1.0, passed with distinction, first in cohort. Thesis (1.0) on the parameter-performance trade-off in radiology foundation models, written at Harvard Medical School and Massachusetts General Hospital.
+- id: ntu
+  section: education
+  start: 2025-01
+  end: 2025-05
+  title: Exchange semester, Mathematical and Computer Sciences
+  org: Nanyang Technological University
+  place: Singapore
+  note: CGPA 4.83 of 5.00.
+- id: snu
+  section: education
+  start: 2024-09
+  end: 2024-12
+  title: Exchange semester, Computer Science and Mathematics
+  org: Seoul National University
+  place: Seoul
+  note: GPA 4.2 of 4.3, A+ in Statistics and in Deep Learning (graduate level).
+- id: mgh
+  section: experience
+  start: 2026-05
+  end: 2026-09
+  title: Visiting Undergraduate Researcher, Fintelmann Lab
+  org: Massachusetts General Hospital and Harvard Medical School
+  place: Boston
+  note: Bachelor thesis on distilling CT foundation models into 14 compact 3D models, trained with PyTorch DDP on up to eight A100 GPUs (about 2,260 GPU-hours). Engineering for the lab's CT biomarker pipeline (3,864 scans) and an LLM pipeline for clinical notes.
+- id: ekfz-2025
+  section: experience
+  start: 2025-10
+  end: 2026-03
+  title: Research Assistant, Kather Lab
+  org: Else Kröner Fresenius Center for Digital Health
+  place: Dresden
+  note: Shared first author of MuCoDi. Distilled three pathology foundation models of up to 1.1B parameters into edge models with multi-teacher contrastive training.
+- id: ey
+  section: experience
+  start: 2025-07
+  end: 2025-09
+  title: Data Science Intern, Forensic & Integrity Services
+  org: EY
+  place: Paris
+  note: Built a detector for AI-generated document forgeries for EY's document-analysis platform, fine-tuning DINOv3 on a curated set of 250k real and 250k synthetic images.
+- id: ekfz-2023
+  section: experience
+  start: 2023-11
+  end: 2024-06
+  title: Research Assistant, Kather Lab
+  org: Else Kröner Fresenius Center for Digital Health
+  place: Dresden
+  note: Self-supervised feature extraction that turned 16 TB of whole-slide images into 23 MB of embeddings.
+- id: tud-ta
+  section: experience
+  start: 2023-10
+  end: 2024-03
+  title: Teaching Assistant, Discrete Mathematics
+  org: TU Dresden
+  place: Dresden
+  note: Weekly tutorials for about 30 first-year students. My group received the highest satisfaction rating of all groups.
+- id: fraunhofer
+  section: experience
+  start: 2023-03
+  end: 2023-09
+  title: Research Assistant, Applied Machine Learning
+  org: Fraunhofer IVI
+  place: Dresden
+  note: Automated calibration for the 29 near-infrared classifiers of a waste-sorting plant, with gradient boosting on 58 spectral parameters.
+- id: best-paper
+  section: honors
+  start: 2026-10
+  title: Best Paper Award
+  org: MICCAI 2026 Workshop on Efficient Medical AI (EMA4MICCAI)
+  place: Strasbourg
+  note: For MuCoDi, shared first author.
+- id: studienstiftung
+  section: honors
+  start: 2022-10
+  title: Scholar
+  org: German Academic Scholarship Foundation (Studienstiftung des deutschen Volkes)
+- id: hermann-medal
+  section: honors
+  start: 2022-06
+  title: Hermann Medal
+  org: Dr.-Carl-Hermann-Gymnasium Schönebeck
+  note: Best Abitur of the year, grade 1.0.

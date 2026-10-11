@@ -1,0 +1,63 @@
+---
+import { site } from '../data/site';
+import { builtOn, commit, shortCommit } from '../lib/build';
+---
+
+<footer class="site-footer">
+  <div class="page row">
+    <p class="label who">
+      {site.name}
+      <br />
+      <span class="muted">Zurich, Switzerland</span>
+    </p>
+    <div class="content">
+      <ul class="links">
+        <li>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </li>
+        {site.profiles.map((p) => (
+          <li>
+            <a href={p.href}>{p.label}</a>
+          </li>
+        ))}
+        <li>
+          <a href={site.cv}>CV (PDF)</a>
+        </li>
+      </ul>
+      <p class="built muted">
+        Built {builtOn}
+        {shortCommit && (
+          <>
+            from{' '}
+            <a class="mono" href={`${site.source}/commit/${commit}`}>
+              {shortCommit}
+            </a>
+          </>
+        )}
+        . No cookies, no tracking. <a href={site.source}>Source</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-5);
+    border-top: 1px solid var(--rule-strong);
+    padding-block: var(--space-3) var(--space-5);
+    font-size: var(--text-sm);
+  }
+
+  .who {
+    margin: 0 0 var(--space-2);
+    font-weight: 650;
+  }
+
+  .who span {
+    font-weight: 400;
+  }
+
+  .built {
+    margin-top: var(--space-2);
+  }
+</style>

@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ASTRO_TELEMETRY_DISABLED: 1
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Type check and formatting
+        run: |
+          npm run check
+          npm run lint
+      - name: Build
+        run: npm run build
+      - name: House style (sources and built pages)
+        run: |
+          python3 scripts/check_style.py
+          python3 scripts/check_style.py $(find dist -name '*.html')
+      - name: Internal links
+        run: node scripts/check_links.mjs dist
+      - name: End-to-end and accessibility tests
+        run: |
+          npx playwright install --with-deps chromium
+          npm run e2e
+      - name: Upload the Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report

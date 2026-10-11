@@ -1,0 +1,23 @@
+# One entry per line on /news/ (the home page shows the newest five).
+# Keep every claim traceable to a document; dates are shown as month and year.
+- id: singapore-urban-heat-1-0
+  date: 2026-10-10
+  text: Released Singapore Urban Heat 1.0.0, a study of surface heat in Singapore with a web map that updates itself every month.
+  link: { label: Open the map, href: /singapore-urban-heat/ }
+- id: best-paper-ema4miccai
+  date: 2026-10-01
+  text: MuCoDi received the Best Paper Award at the MICCAI 2026 Workshop on Efficient Medical AI (EMA4MICCAI) in Strasbourg.
+  link: { label: Paper, href: 'https://arxiv.org/abs/2607.05533' }
+- id: eth-start
+  date: 2026-09-14
+  text: Started the MSc in Data Science at ETH Zurich.
+- id: bsc-tu-dresden
+  date: 2026-08-07
+  text: Graduated from TU Dresden with a BSc in Computer Science, grade 1.0, passed with distinction. My thesis on radiology foundation models received 1.0.
+- id: mucodi-arxiv
+  date: 2026-07-06
+  text: Our MuCoDi preprint is on arXiv.
+  link: { label: arXiv:2607.05533, href: 'https://arxiv.org/abs/2607.05533' }
+- id: mgh-start
+  date: 2026-05-01
+  text: Joined the Fintelmann Lab at Massachusetts General Hospital and Harvard Medical School as a visiting researcher for my Bachelor thesis.
