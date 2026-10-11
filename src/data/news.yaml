@@ -1,5 +1,9 @@
 # One entry per line on /news/ (the home page shows the newest five).
 # Keep every claim traceable to a document; dates are shown as month and year.
+- id: radiology-thesis-demo
+  date: 2026-10-12
+  text: Released a web demo of my Bachelor thesis. The fourteen distilled chest CT encoders run in the browser on your own CPU, next to the results of the thesis.
+  link: { label: Open the demo, href: /mucodi-radiology/ }
 - id: singapore-urban-heat-1-0
   date: 2026-10-10
   text: Released Singapore Urban Heat 1.0.0, a study of surface heat in Singapore with a web map that updates itself every month.

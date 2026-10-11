@@ -18,6 +18,8 @@ const projects = defineCollection({
       summary: z.string(),
       image: image().optional(),
       imageAlt: z.string().optional(),
+      // Credit and licence of third-party material in the image, shown under it.
+      imageCredit: z.string().optional(),
       // Figures with a white background sit on a light plate in both themes.
       plate: z.boolean().default(false),
       links: z.array(link),

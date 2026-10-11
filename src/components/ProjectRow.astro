@@ -11,7 +11,8 @@ interface Props {
 }
 
 const { project, index, full = false, headingLevel = 'h3' } = Astro.props;
-const { title, kind, context, award, summary, image, imageAlt, plate, links, live } = project.data;
+const { title, kind, context, award, summary, image, imageAlt, imageCredit, plate, links, live } =
+  project.data;
 const { Content } = await render(project);
 const Heading = headingLevel;
 ---
@@ -46,16 +47,19 @@ const Heading = headingLevel;
         <span class="muted">{context}</span>
       </p>
       {image && (
-        <figure class:list={['figure', { plate }]}>
-          <Image
-            src={image}
-            alt={imageAlt ?? ''}
-            widths={[480, 800, 1200]}
-            sizes="(min-width: 48rem) 26rem, 100vw"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
+        <div>
+          <figure class:list={['figure', { plate }]}>
+            <Image
+              src={image}
+              alt={imageAlt ?? ''}
+              widths={[480, 800, 1200]}
+              sizes="(min-width: 48rem) 26rem, 100vw"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          {imageCredit && <p class="credit">{imageCredit}</p>}
+        </div>
       )}
     </div>
   </div>
@@ -183,5 +187,11 @@ const Heading = headingLevel;
 
   .figure.plate :global(img) {
     object-fit: contain;
+  }
+
+  .credit {
+    margin: 0.4rem 0 0;
+    font-size: var(--text-xs);
+    color: var(--muted);
   }
 </style>
