@@ -3,7 +3,7 @@
 % and a link to the homepage added (it links GitHub and Google Scholar). Ranges are written with "to", not dashes.
 % Build: npm run cv (xelatex via latexmk; the Libertine and Biolinum fonts ship with TeX Live).
 \documentclass[10pt,a4paper]{article}
-\usepackage[a4paper,top=1.2cm,bottom=1.15cm,left=1.6cm,right=1.6cm]{geometry}
+\usepackage[a4paper,top=1.0cm,bottom=1.0cm,left=1.6cm,right=1.6cm]{geometry}
 \usepackage[english]{babel}
 \usepackage{fontspec}
 \usepackage{xcolor}
@@ -35,7 +35,7 @@
 
 % Abschnitt: Biolinum halbfett, Versalien gesperrt, Akzentfarbe, feine Linie
 \newcommand{\abschnitt}[1]{%
-  \par\vspace{5.2pt}%
+  \par\vspace{4.6pt}%
   {\ui\bfseries\fontsize{10.5}{10.5}\selectfont\color{akzent}\sperr{\MakeUppercase{#1}}}\par
   \vspace{2.2pt}{\color{linie}\hrule height 0.4pt}\vspace{4pt}}
 
@@ -138,6 +138,7 @@
 \abschnitt{Skills}
 
 \zeile{Programming}{Python (PyTorch, JAX, scikit-learn, XGBoost, pandas, Hugging Face, ONNX), SQL, Rust, C++, Java}
+\zeile{Open source}{\href{https://github.com/mooofna/turing-machines}{turing-machines} (Rust, WebAssembly): decides all 858,909 four-state Turing machines}
 \zeile{Infrastructure}{Slurm and Apptainer on GPU clusters, Docker, Kubernetes, GitHub Actions, pytest, mypy, W\&B}
 \zeile{Languages}{German (native), English (C2, IELTS 8.5), French (A1)}
 
