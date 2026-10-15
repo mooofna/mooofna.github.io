@@ -1,6 +1,6 @@
 ---
 title: Claude skills
-order: 4
+order: 5
 kind: Open source
 context: Claude Code plugin
 summary: Three Claude skills with tested scripts. They turn handwritten pages into Obsidian notes, turn lecture material into Anki decks, and solve study plans exactly.

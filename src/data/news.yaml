@@ -1,5 +1,9 @@
 # One entry per line on /news/ (the home page shows the newest five).
 # Keep every claim traceable to a document; dates are shown as month and year.
+- id: turing-machines
+  date: 2026-10-15
+  text: Released a Turing machine simulator and busy beaver search in Rust, with a site that runs in the browser. It re-derives BB(4) by deciding all 858,909 four-state machines.
+  link: { label: Open the site, href: /turing-machines/ }
 - id: radiology-thesis-demo
   date: 2026-10-12
   text: Released a web demo of my Bachelor thesis. The fourteen distilled chest CT encoders run in the browser on your own CPU, next to the results of the thesis.
